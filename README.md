@@ -6,6 +6,14 @@ Jump between tabs instantly using a keyboard-driven picker powered by fzf.
 
 ---
 
+## Demo
+
+See ktab in action — fuzzy search across tabs and jump instantly:
+
+<video src="https://github.com/user-attachments/assets/c6432f46-1c0e-480d-a785-d5523ed9c472" controls width="700"></video>
+
+---
+
 ## Why
 
 When you’re working with multiple tabs for the same repo (build, logs, debugging, experiments), switching becomes slow and breaks flow.
