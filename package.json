@@ -1,5 +1,5 @@
 {
-  "name": "ktab",
+  "name": "@kammu2000/ktab",
   "version": "1.0.0",
   "description": "fuzzy tab picker for kitty",
   "main": "index.js",
