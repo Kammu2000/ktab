@@ -30,7 +30,7 @@ ktab solves that by giving you a fast fuzzy picker:
 ## Installation
 
 ```bash
-npm install -g ktab
+npm install -g @kammu2000/ktab
 ```
 
 ---
