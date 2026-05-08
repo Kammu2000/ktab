@@ -8,21 +8,23 @@ function formatTab(tab: Tab): string {
 export const pickTab = async (tabs: Tab[]): Promise<number | null> => {
   const input = tabs.map(formatTab).join("\n");
 
-  const { stdout } = await execa("fzf", {
-    input,
-    env: {
-      ...process.env,
-      FZF_DEFAULT_OPTS: `
-        --height=40%
-        --reverse
-        --border
-        --prompt="Tabs > "
-      `
-    }
-  });
+  try {
+    const { stdout } = await execa("fzf", {
+      input,
+      env: {
+        ...process.env,
+        FZF_DEFAULT_OPTS: `
+          --height=40%
+          --reverse
+          --border
+          --prompt="Tabs > "
+        `
+      }
+    });
 
-  if (!stdout) return null;
-
-  const tabId = Number(stdout.split(":")[0]);
-  return tabId;
+    return stdout ? Number(stdout.split(":")[0]) : null;
+  } catch (err) {
+    // ESC / Ctrl+C case
+    return null;
+  }
 }
